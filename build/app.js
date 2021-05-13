@@ -10,8 +10,10 @@ const koa_router_1 = __importDefault(require("koa-router"));
 const koa2_cors_1 = __importDefault(require("koa2-cors"));
 const apollo_server_koa_1 = require("apollo-server-koa");
 const schema_1 = require("./api/graphql/schema");
+const firebase_1 = require("./loaders/firebase");
 const port = 3000;
 const main = async () => {
+    firebase_1.connectFireBase();
     const app = new koa_1.default();
     const router = new koa_router_1.default();
     const apolloServer = new apollo_server_koa_1.ApolloServer({

@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectFireBase = void 0;
 const admin = __importStar(require("firebase-admin"));
 const fireorm = __importStar(require("fireorm"));
-async function connectFireBase() {
+function connectFireBase() {
     admin.initializeApp({
         credential: admin.credential.cert({
             clientEmail: "firebase-adminsdk-japw8@corporacionaquaperu.iam.gserviceaccount.com",
