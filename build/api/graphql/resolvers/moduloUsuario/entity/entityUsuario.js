@@ -26,10 +26,6 @@ __decorate([
     type_graphql_1.Field(),
     __metadata("design:type", String)
 ], Usuario.prototype, "email", void 0);
-__decorate([
-    type_graphql_1.Field(),
-    __metadata("design:type", String)
-], Usuario.prototype, "password", void 0);
 Usuario = __decorate([
     type_graphql_1.ArgsType(),
     type_graphql_1.ObjectType(),

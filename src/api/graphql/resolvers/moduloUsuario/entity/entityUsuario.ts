@@ -11,6 +11,5 @@ export class Usuario {
     firstName: string;
     @Field()
     email: string;
-    @Field()
-    password: string;
+    
 }

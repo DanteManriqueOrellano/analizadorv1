@@ -11,25 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RegisterUserResolver = void 0;
 const type_graphql_1 = require("type-graphql");
-const bcrypt_1 = __importDefault(require("bcrypt"));
 const fireorm_1 = require("fireorm");
 const typedi_1 = require("typedi");
 const entityUsuario_1 = require("../entity/entityUsuario");
 let RegisterUserResolver = class RegisterUserResolver {
     async register(user) {
-        const hashedPassword = await bcrypt_1.default.hash(user.password, 12);
         const userRepository = fireorm_1.getRepository(entityUsuario_1.Usuario);
-        const newUser = await userRepository.create({
-            password: user.password,
-            email: user.email,
-            firstName: user.firstName,
-        });
+        const newUser = await userRepository.create(user);
         return newUser;
     }
 };

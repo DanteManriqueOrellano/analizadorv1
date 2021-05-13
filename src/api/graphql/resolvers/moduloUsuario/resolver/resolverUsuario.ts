@@ -18,14 +18,10 @@ export class RegisterUserResolver {
         @Args() user: Usuario,
 
     ): Promise<Usuario> {
-        const hashedPassword = await bcrypt.hash(user.password, 12);
+        
 
         const userRepository = getRepository(Usuario);
-        const newUser = await userRepository.create({
-            password: user.password,
-            email: user.email,
-            firstName: user.firstName,
-        });
+        const newUser = await userRepository.create(user        );
         return newUser
     }
 }
