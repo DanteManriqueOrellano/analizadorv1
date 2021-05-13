@@ -1,5 +1,5 @@
 import { Args, Mutation, Resolver } from "type-graphql";
-import bcrypt from "bcrypt";
+
 import { getRepository } from "fireorm";
 import { Service } from "typedi";
 import { Usuario } from "../entity/entityUsuario";
